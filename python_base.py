@@ -1309,3 +1309,29 @@
 	lists[2].append(9)										# 结果为[[3], [6], [9]]
 	lists = [[[] for j in range(4)] for i in range(3)]
 	lists																	# 3行4列，且每一个元素为[]
+
+
+
+'''时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----时间处理----'''
+# 基本时间获取
+    import datetime
+    now = datetime.datetime.now()
+    print now
+    datetime.datetime(2016, 10, 12, 23, 9, 12, 946118)
+    print now.strftime("%Y-%m-%d %H:%M:%S")
+    '2016-10-12 23:09:12'
+# 获取明天/昨天/前后N天
+    datetime.date.today() + datetime.timedelta(days=1)
+    datetime.date.today() - datetime.timedelta(days=N)
+# 获取本周/本月/上月最后一天
+    today = datetime.date.today()
+    sunday = today + datetime.timedelta(6 - today.weekday())
+
+    import calendar
+    _, last_day_num = calendar.monthrange(today.year, today.month)
+    last_day = datetime.date(today.year, today.month, last_day_num)
+
+# timestamp
+    import time
+    print time.time()
+    1421075455.568243
